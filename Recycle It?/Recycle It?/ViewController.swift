@@ -1,10 +1,5 @@
 //
 //  ViewController.swift
-//  SmartCameraLBTA
-//
-//  Created by Brian Voong on 7/12/17.
-//  Copyright © 2017 Lets Build That App. All rights reserved.
-//
 
 import UIKit
 import AVKit
@@ -24,9 +19,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // here is where we start up the camera
-        // for more details visit: https://www.letsbuildthatapp.com/course_video?id=1252
         let captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
@@ -44,9 +36,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
         
-        
-//        VNImageRequestHandler(cgImage: <#T##CGImage#>, options: [:]).perform(<#T##requests: [VNRequest]##[VNRequest]#>)
-        
         setupIdentifierConfidenceLabel()
     }
     
@@ -59,29 +48,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        print("Camera was able to capture a frame:", Date())
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        // !!!Important
-        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom
-        guard let model = try? VNCoreMLModel(for: Trash1().model) else { return }
+        guard let model = try? VNCoreMLModel(for: TrashType().model) else { return }
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
-            
-            //perhaps check the err
-            
-//            print(finishedReq.results)
             
             guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
             
             guard let firstObservation = results.first else { return }
             
             print(firstObservation.identifier, firstObservation.confidence)
-            
-            DispatchQueue.main.async {
-                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
-            }
-            
         }
         
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])

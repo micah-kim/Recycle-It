@@ -15,7 +15,8 @@
 		C13279842737785A00E3DB07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13279822737785A00E3DB07 /* LaunchScreen.storyboard */; };
 		C132799027377D3F00E3DB07 /* RecycleCategories.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C132798F27377D3F00E3DB07 /* RecycleCategories.mlmodel */; };
 		C13279922737815200E3DB07 /* BottleCan.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C13279912737815200E3DB07 /* BottleCan.mlmodel */; };
-		C132799827378D5700E3DB07 /* Trash1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C132799727378D5700E3DB07 /* Trash1.mlmodel */; };
+		C132799C2737A17F00E3DB07 /* TrashType.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C132799B2737A17F00E3DB07 /* TrashType.mlmodel */; };
+		C132799E2737A97900E3DB07 /* TrashClass.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C132799D2737A97800E3DB07 /* TrashClass.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		C13279852737785A00E3DB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C132798F27377D3F00E3DB07 /* RecycleCategories.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = RecycleCategories.mlmodel; path = ../../../Downloads/RecycleCategories.mlmodel; sourceTree = "<group>"; };
 		C13279912737815200E3DB07 /* BottleCan.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BottleCan.mlmodel; path = ../../../Documents/BottleCan..mlmodel/Models/BottleCan.mlmodel; sourceTree = "<group>"; };
-		C132799727378D5700E3DB07 /* Trash1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Trash1.mlmodel; path = ../../../Documents/Trash.mlmodel/Models/Trash1.mlmodel; sourceTree = "<group>"; };
+		C132799B2737A17F00E3DB07 /* TrashType.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TrashType.mlmodel; path = ../../../Documents/TrashType.mlmodel/Models/TrashType.mlmodel; sourceTree = "<group>"; };
+		C132799D2737A97800E3DB07 /* TrashClass.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TrashClass.mlmodel; path = ../../../Documents/TrashClass.mlmodel/Models/TrashClass.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,8 @@
 				C13279852737785A00E3DB07 /* Info.plist */,
 				C132798F27377D3F00E3DB07 /* RecycleCategories.mlmodel */,
 				C13279912737815200E3DB07 /* BottleCan.mlmodel */,
-				C132799727378D5700E3DB07 /* Trash1.mlmodel */,
+				C132799B2737A17F00E3DB07 /* TrashType.mlmodel */,
+				C132799D2737A97800E3DB07 /* TrashClass.mlmodel */,
 			);
 			path = "Recycle It?";
 			sourceTree = "<group>";
@@ -148,9 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C132797C2737785800E3DB07 /* ViewController.swift in Sources */,
-				C132799827378D5700E3DB07 /* Trash1.mlmodel in Sources */,
 				C13279782737785800E3DB07 /* AppDelegate.swift in Sources */,
 				C13279922737815200E3DB07 /* BottleCan.mlmodel in Sources */,
+				C132799C2737A17F00E3DB07 /* TrashType.mlmodel in Sources */,
+				C132799E2737A97900E3DB07 /* TrashClass.mlmodel in Sources */,
 				C132799027377D3F00E3DB07 /* RecycleCategories.mlmodel in Sources */,
 				C132797A2737785800E3DB07 /* SceneDelegate.swift in Sources */,
 			);
